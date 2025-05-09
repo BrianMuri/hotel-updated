@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supper Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Supper Menu</h1>
+    </header>
+    <main>
+        <div class="meal-options">
+            <div class="meal">
+                <img src="../static/images/meal7.jpg" alt="ugali and meat">
+                <p>ugali and meat - 500 KES</p>
+                <button onclick="addMeal('ugali and meat', 500)">Add</button>
+            </div>
+            <div class="meal">
+                <img src="../static/images/meal8.jpg" alt="steak">
+                <p>steak - 750 KES</p>
+                <button onclick="addMeal('steak', 750)">Add</button>
+            </div>
+            <div class="meal">
+                <img src="../static/images/meal9.jpg" alt="avocado alfredo">
+                <p>avocado alfredo - 500 KES</p>
+                <button onclick="addMeal('avocado alfredo', 500)">Add</button>
+            </div>
+        </div>
+        <a href="/" class="back-button">Back to Home</a>
+    </main>
+</body>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Food Ordering</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Hotel Food Ordering System</h1>
+    </header>
+    <main>
+        <h2>What will you be having today?</h2>
+        <div class="meal-buttons">
+            <!-- Breakfast Button -->
+            <a href="/breakfast" class="meal-button" style="background-image: url('../static/images/breakfast.jpg');">
+                Breakfast
+            </a>
+            <!-- Lunch Button -->
+            <a href="/lunch" class="meal-button" style="background-image: url('../static/images/lunch.jpg');">
+                Lunch
+            </a>
+            <!-- Supper Button -->
+            <a href="/supper" class="meal-button" style="background-image: url('../static/images/supper.jpg');">
+                Supper
+            </a>
+        </div>
+        <div id="checkout-section" style="display: none;">
+            <h3>Checkout</h3>
+            <ul id="selected-meals"></ul>
+            <p>Total: <span id="total-price">0</span> KES</p>
+            <form id="checkout-form">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required><br><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="cash">Cash</option>
+                    <option value="cashless">Cashless</option>
+                </select><br><br>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Thank you and have a lovely day</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
