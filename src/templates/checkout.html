@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+    <main>
+        <h2>Your Selected Meals</h2>
+        <ul id="selected-meals">
+            {% for meal in selected_meals %}
+                <li>{{ meal.name }} - {{ meal.price }} KES</li>
+            {% endfor %}
+        </ul>
+        <p>Total: <span id="total-price">0</span> KES</p>
+        <form id="checkout-form" method="POST">
+            {% for meal in selected_meals %}
+                <input type="hidden" name="meal_ids" value="{{ meal.id }}" />
+            {% endfor %}
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required><br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="cash">Cash</option>
+                <option value="cashless">Cashless</option>
+            </select><br><br>
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+</body>
+</html>

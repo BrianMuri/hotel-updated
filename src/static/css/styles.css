@@ -161,3 +161,22 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+.checkout-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.checkout-button .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.checkout-button .button:hover {
+    background-color: #45a049;
+}

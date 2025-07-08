@@ -1,0 +1,23 @@
+# Hotel Management System Frontend
+
+This project is a frontend application for a hotel management system. It is built using Python and utilizes the Flask web framework to serve dynamic content and static files.
+
+flask framework is used for python frontend framework development and API's. different from HTML as it basically instead of displaying on a browser. it generates a python server to which the app runs on.
+NB: sometimes you require to kill a process in that is using the port designated for that task you do this by the command sudo kill -9 <PID> which is the activity number of the port. to getther pid number of the port you run sudo lsof -i : 5000 
+
+## Project Structure
+
+```
+hotel-management-frontend
+├── src
+│   ├── main.py               # Entry point of the application
+│   ├── templates
+│   │   └── index.html        # Main HTML page
+│   ├── static
+│   │   ├── css
+│   │   │   └── styles.css    # CSS styles for the frontend
+│   │   └── js
+│   │       └── scripts.js     # JavaScript for client-side functionality
+├── requirements.txt          # Project dependencies
+└── README.md                 # Project documentation
+```

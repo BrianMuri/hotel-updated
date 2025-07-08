@@ -1,0 +1,37 @@
+#backend
+#sudo apt install postgresql postgresql-contrib to linux
+#run sudo -i -u postgres to switch to postgres (kind of like cd)
+#run psql to open postgreSQL shell
+
+#in order for me to see the backend data got to flash shell
+# flask --app src/main.py shell 
+#then query to get the order
+# from main import db, Order
+# orders = Order.query.all()
+# for order in orders:
+#    print(f"Location: {order.location}, Phone: {order.phone},  Payment Method: {order.payment_method}, Total Price:    {order.total_price}")
+#    or
+#Using PostgreSQL Shell:
+#Access the PostgreSQL shell:
+# sudo -i -u postgres
+#psql
+#Connect to the hotel_management database:
+#\c hotel_management
+#Query the order table:
+#SELECT * FROM "order";
+
+#docker
+#. Build the Docker Image
+#From your project root (where your Dockerfile is), run:
+#sudo docker build -t hotel-management-app .
+
+#2. Remove Any Old Container (if exists)
+#(Ignore errors if the container does not exist.)
+#sudo docker rm -f hotel-management-app
+
+#3. Run the New Container
+#sudo docker run -d -p 5000:5000 --name hotel-management-app hotel-management-app
+
+#4. Check the Logs
+#To make sure your app started correctly:
+#sudo docker logs hotel-management-app
