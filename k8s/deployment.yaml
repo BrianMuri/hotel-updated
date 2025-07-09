@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-management-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotel-management-app
+  template:
+    metadata:
+      labels:
+        app: hotel-management-app
+    spec:
+      containers:
+      - name: hotel-management-app
+        image: justmuri/hotel-management-app:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        env:
+        - name: DATABASE_URL
+          value: "postgresql://hotel_user:password@172.16.25.167/hotel_management"
